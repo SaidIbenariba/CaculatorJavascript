@@ -1,5 +1,5 @@
 let trailingResult = 0;
-let operationOptions = ['divide', 'multiply', 'subtract', 'add'];
+let operationOptions = ["divide", "multiply", "subtract", "add"];
 let workingOperation = "";
 
 function updateDisplay(input) {
@@ -11,9 +11,12 @@ function updateDisplay(input) {
       display.innerHTML = "0.";
     } else if (input === "negative-value") {
       if (display.innerHTML.indexOf("-1") === -1) {
-        display.innerHTML = "-" + display.innerHTML
+        display.innerHTML = "-" + display.innerHTML;
       } else if (display.innerHTML.indexOf("-1" > -1)) {
-        display.innerHTML = display.innerHTML.slice(1, display.innerHTML.length);
+        display.innerHTML = display.innerHTML.slice(
+          1,
+          display.innerHTML.length
+        );
       }
     } else {
       display.innerHTML = input;
@@ -33,13 +36,21 @@ function updateDisplay(input) {
     } else {
       // Dealing with a set operand
       // console.log(display.innerHTML, " Dealing with set operand");
-      trailingResult = calculate(trailingResult, display.innerHTML, workingOperation);
+      trailingResult = calculate(
+        trailingResult,
+        display.innerHTML,
+        workingOperation
+      );
       secondaryDisplay.innerHTML = trailingResult;
       display.innerHTML = 0;
       workingOperation = input;
     }
   } else if (input === "equals") {
-    display.innerHTML = calculate(trailingResult, display.innerHTML, workingOperation);
+    display.innerHTML = calculate(
+      trailingResult,
+      display.innerHTML,
+      workingOperation
+    );
     trailingResult = 0;
     workingOperation = "";
     secondaryDisplay.innerHTML = trailingResult;
@@ -52,7 +63,7 @@ function updateDisplay(input) {
   } else if (input === "negative-value") {
     // console.log("negative-value selected");
     if (display.innerHTML.indexOf("-1") === -1) {
-      display.innerHTML = "-" + display.innerHTML
+      display.innerHTML = "-" + display.innerHTML;
     } else if (display.innerHTML.indexOf("-1" > -1)) {
       display.innerHTML = display.innerHTML.slice(1, display.innerHTML.length);
     }
@@ -75,7 +86,7 @@ function calculate(firstNumber, secondNumber, operation) {
   let result;
   firstNumber = parseFloat(firstNumber);
   secondNumber = parseFloat(secondNumber);
-  switch(operation) {
+  switch (operation) {
     case "add":
       // console.log("add calculated")
       result = firstNumber + secondNumber;

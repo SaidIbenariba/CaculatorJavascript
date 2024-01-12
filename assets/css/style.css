@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #ccc;
+  background: rgb(33, 32, 32);
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -15,17 +15,20 @@ body {
 }
 
 #calculator {
-  position: relative;
+  position: absolute;
   border-radius: 7px;
   margin: auto;
   margin-top: 20px;
   display: block;
   height: auto;
   width: 278px;
-  background-color: rgb(255, 255, 255);
+  background-color: black;
   font-size: 0.8em;
   padding: 5px;
   max-width: 320px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 #calculator:before,
 #calculator:after {
@@ -56,6 +59,7 @@ body {
   position: absolute;
   top: 3px;
   right: 10px;
+  color: white;
 }
 
 #display {
@@ -65,7 +69,7 @@ body {
   font-size: 2.5em;
   font-family: "Oxygen Mono", monospace;
   background: inherit;
-  color: black;
+  color: white;
 }
 
 button {
@@ -78,6 +82,7 @@ button {
   color: black;
   border-radius: 5px;
   font-size: 1.4em;
+  border-radius: 50%;
 }
 
 button:active {
@@ -87,7 +92,7 @@ button:active {
 button:nth-child(2) {
   margin-left: 205px;
   display: block;
-  background: #ef4a49;
+  background: orange;
   color: white;
 }
 
@@ -100,7 +105,7 @@ button:nth-child(10),
 button:nth-child(14),
 button:nth-child(17),
 button:nth-child(18) {
-  background: #06e0c3;
+  background: orange;
   color: white;
 }
 
